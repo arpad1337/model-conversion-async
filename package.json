@@ -4,7 +4,7 @@
   "description": "This CLI converts SHAPR 3D models to STEP, IGES, STL or OBJ format",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --module commonjs --target ES5 --outDir ./dist ./src/*.ts",
+    "build": "tsc --build tsconfig.json",
     "start": "node index.js",
     "test": "npm run build && mocha ./test/*.spec.js"
   },

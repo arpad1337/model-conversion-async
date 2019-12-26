@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "outDir": "dist"
+    },
+    "files": [
+        "src/index.ts",
+        "src/program.ts",
+        "src/lib/file-converter.ts",
+        "src/lib/processors/index.ts",
+        "src/lib/processors/conversion-processor.ts",
+        "src/lib/processors/obj-conversion-processor.ts",
+	    "src/lib/processors/step-conversion-processor.ts",
+	    "src/lib/processors/stl-conversion-processor.ts",
+	    "src/lib/processors/iges-conversion-processor.ts"
+    ]
+}
