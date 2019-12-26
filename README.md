@@ -26,6 +26,8 @@ chmod +x ./shapr3dconvert
 ./shapr3dconvert input_file --format format output_file
 ```
 
+Format can be: 'step' | 'iges' | 'stl' | 'obj'
+
 ## Author
 
 [rpi1337](https://twitter.com/rpi1337)
