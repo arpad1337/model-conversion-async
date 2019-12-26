@@ -1,4 +1,4 @@
-# 3D Model Converter [![Build Status](https://travis-ci.org/arpad1337/model-conversion-async.svg?branch=master)](https://travis-ci.org/arpad1337/model-conversion-async)
+# 3D Model Converter CLI [![Build Status](https://travis-ci.org/arpad1337/model-conversion-async.svg?branch=master)](https://travis-ci.org/arpad1337/model-conversion-async)
 
 ## Prerequisites
 
