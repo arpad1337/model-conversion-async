@@ -24,7 +24,8 @@ export class FileConverter extends EventEmitter {
         this.outputFile = outputFile
     }
 
-    convert() {
+    public convert() {
+        let originalFileContent = fs.readFileSync(this.inputFile)
         let processor: ConversionProcessor
         switch (this.format) {
             case 'step': {
@@ -51,8 +52,9 @@ export class FileConverter extends EventEmitter {
             this.emit('onProgress', percent)
         })
 
+        // TODO: write the real output to file
         processor.on('onComplete', (output: string | Buffer) => {
-            this.writeFile(output)
+            this.writeFile(originalFileContent)
             this.emit('onComplete')
         })
 
