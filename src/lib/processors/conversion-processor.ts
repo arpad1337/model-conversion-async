@@ -19,7 +19,7 @@ export abstract class ConversionProcessor extends EventEmitter {
                 return;
             }
             this.emit('onProgress', 100 - counter)
-        }, 1000)
+        }, 680)
     }
 
 }
