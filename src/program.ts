@@ -25,6 +25,12 @@ export default class Program {
         if (argv.indexOf('--format') !== -1) {
             format = argv[argv.indexOf('--format') + 1] 
         }
+
+        if (formats.indexOf(format as FileFormat) === -1) {
+            console.error('Unsupported output format')
+            this.exit(1)
+        }
+
         const inputFile = argv[0]
         const outputFile = argv[argv.length - 1]
 
