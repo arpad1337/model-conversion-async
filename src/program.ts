@@ -3,8 +3,6 @@ import {
     FileConverter
 } from './lib/file-converter'
 
-import * as yargs from 'yargs'
-
 interface Arguments {
     _: any;
     format: string
@@ -15,23 +13,20 @@ export default class Program {
     public static main(): void {
         const formats: ReadonlyArray<FileFormat> = ['iges','step','stl','obj']
 
-        const argv: Arguments = yargs.option('format', {
-            default: 'step',
-            choices: formats,
-            demandOption: true
-        }).argv
-
-        if (argv._.length < 2) {
+        const argv = process.argv.slice(2)[0].split(' ');
+        if (argv.length < 2) {
             console.error('Missing input or output file path')
             this.exit(1)
         }
+
+        console.log('Launching with args', argv)
         
-        const format = argv.format;
-        const inputFile = argv._[0]
-        const outputFile = argv._[argv._.length - 1]
+        const format = argv[argv.indexOf('--format') + 1] || 'step';
+        const inputFile = argv[0]
+        const outputFile = argv[argv.length - 1]
 
         const fileConverter = new FileConverter(inputFile, format as FileFormat, outputFile)
-        
+
         fileConverter.on('onProgress', this.reportProgress)
         fileConverter.on('onComplete', () => {
             this.reportCompletion()
