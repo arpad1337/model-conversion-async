@@ -45,7 +45,7 @@ export default class Program {
         try {
             fileConverter.convert() 
         } catch(e) {
-            console.error(`### ERROR: ${e.message}`)
+            console.error(`### ERROR: ${e.message} ###`)
             this.exit(1)
         }
     }
