@@ -21,7 +21,10 @@ export default class Program {
 
         console.log('Launching with args', argv)
         
-        const format = argv[argv.indexOf('--format') + 1] || 'step';
+        let format = 'step';
+        if (argv.indexOf('--format') !== -1) {
+            format = argv[argv.indexOf('--format') + 1] 
+        }
         const inputFile = argv[0]
         const outputFile = argv[argv.length - 1]
 
