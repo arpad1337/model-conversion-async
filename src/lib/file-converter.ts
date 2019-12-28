@@ -7,7 +7,6 @@ import {
     OBJConversionProcessor,
     ConversionProcessor
 } from './processors'
-import { fstat } from 'fs'
 
 export type FileFormat = 'step' | 'iges' | 'stl' | 'obj'
 
